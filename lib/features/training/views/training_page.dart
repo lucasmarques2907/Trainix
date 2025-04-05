@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:trainix/config/imports.dart';
 
 class TrainingPage extends StatefulWidget {
   const TrainingPage({super.key});
@@ -11,7 +11,8 @@ class _TrainingPageState extends State<TrainingPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.yellow,
-      body: Center(child: Text('Training')));
+      backgroundColor: AppColors.background,
+      body: Center(child: Text('Training')),
+    );
   }
 }

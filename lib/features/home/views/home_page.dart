@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:trainix/config/imports.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -11,7 +11,8 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
-      body: Center(child: Text('Home')));
+      backgroundColor: AppColors.background,
+      body: Center(child: Text('Home')),
+    );
   }
 }

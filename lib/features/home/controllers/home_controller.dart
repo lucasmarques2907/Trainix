@@ -1,5 +1,4 @@
-import 'package:flutter/widgets.dart';
-import 'package:trainix/features/home/repositories/home_repository.dart';
+import 'package:trainix/config/imports.dart';
 
 class HomeController with ChangeNotifier {
   final HomeRepository homeRepository;

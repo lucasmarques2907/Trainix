@@ -1,7 +1,5 @@
-import 'package:flutter/material.dart';
-import 'package:trainix/features/profile/views/profile_page.dart';
-import 'package:trainix/features/tabs/repositories/tabs_repository.dart';
-import 'package:trainix/features/training/views/training_page.dart';
+import 'package:trainix/config/imports.dart';
+import 'package:trainix/features/home/views/home_page.dart';
 
 class TabsController extends ChangeNotifier {
   final TabsRepository tabsRepository;
@@ -11,6 +9,7 @@ class TabsController extends ChangeNotifier {
   late TabController tabController;
 
   final List<Tab> tabs = const [
+    Tab(icon: Icon(Icons.home), text: 'Início'),
     Tab(icon: Icon(Icons.fitness_center), text: 'Treinos'),
     Tab(icon: Icon(Icons.person), text: 'Perfil'),
   ];
@@ -29,18 +28,17 @@ class TabsController extends ChangeNotifier {
   String get currentTitle {
     switch (currentIndex) {
       case 0:
-        return 'Treinos';
+        return 'Início';
       case 1:
+        return 'Treinos';
+      case 2:
         return 'Perfil';
       default:
         return 'Trainix';
     }
   }
 
-  List<Widget> get views => const [
-    TrainingPage(),
-    ProfilePage(),
-  ];
+  List<Widget> get views => const [HomePage(), TrainingPage(), ProfilePage()];
 
   void switchTo(int index) {
     if (tabController.index != index) {

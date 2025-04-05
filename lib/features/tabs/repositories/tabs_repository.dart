@@ -1,5 +1,5 @@
 import 'package:http/http.dart' as http;
-import 'package:trainix/features/tabs/services/tabs_service.dart';
+import 'package:trainix/config/imports.dart';
 
 class TabsRepository {
   final TabsService tabsService;

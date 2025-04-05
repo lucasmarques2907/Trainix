@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:trainix/features/tabs/controllers/tabs_controller.dart';
+import 'package:trainix/config/imports.dart';
 
 class TabsPage extends StatefulWidget {
   const TabsPage({super.key});
@@ -14,7 +12,10 @@ class _TabsPageState extends State<TabsPage> with TickerProviderStateMixin {
   void initState() {
     super.initState();
     final tabsController = context.read<TabsController>();
-    final tabCtrl = TabController(length: tabsController.tabs.length, vsync: this);
+    final tabCtrl = TabController(
+      length: tabsController.tabs.length,
+      vsync: this,
+    );
     tabsController.init(tabCtrl);
   }
 
@@ -24,7 +25,15 @@ class _TabsPageState extends State<TabsPage> with TickerProviderStateMixin {
       builder: (context, ctrl, _) {
         return Scaffold(
           appBar: AppBar(
-            title: Text(ctrl.currentTitle),
+            backgroundColor: AppColors.cardBackground,
+            title: Text(
+              ctrl.currentTitle,
+              style: TextStyle(
+                color: AppColors.textPrimary,
+                fontSize: 20.sp,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             centerTitle: true,
           ),
           body: TabBarView(
@@ -32,13 +41,24 @@ class _TabsPageState extends State<TabsPage> with TickerProviderStateMixin {
             children: ctrl.views,
           ),
           bottomNavigationBar: Material(
-            color: Theme.of(context).primaryColor,
-            child: TabBar(
-              controller: ctrl.tabController,
-              tabs: ctrl.tabs,
-              labelColor: Colors.white,
-              unselectedLabelColor: Colors.white60,
-              indicatorColor: Colors.white,
+            color: AppColors.cardBackground,
+            child: SizedBox(
+              height: 60,
+              child: TabBar(
+                dividerColor: Colors.transparent,
+                controller: ctrl.tabController,
+                tabs: ctrl.tabs,
+                indicator: BoxDecoration(
+                  borderRadius: BorderRadius.circular(8),
+                  color: AppColors.primary,
+                ),
+                indicatorSize: TabBarIndicatorSize.tab,
+                labelColor: AppColors.textPrimary,
+                unselectedLabelColor: Colors.white60,
+                overlayColor: WidgetStatePropertyAll(
+                  AppColors.primary.withAlpha(10),
+                ),
+              ),
             ),
           ),
         );

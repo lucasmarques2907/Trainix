@@ -1,5 +1,5 @@
 import 'package:http/http.dart' as http;
-import 'package:trainix/features/home/services/home_service.dart';
+import 'package:trainix/config/imports.dart';
 
 class HomeRepository {
   final HomeService homeService;
