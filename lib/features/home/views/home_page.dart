@@ -130,7 +130,7 @@ class _HomePageState extends State<HomePage> {
               children: [
                 Icon(Icons.repeat, size: 16.sp, color: AppColors.primary),
                 SizedBox(width: 4.w),
-                Text('${e.series}x${e.valuePerSeries} ${e.isTimed ? 's' : ""}'),
+                Text('${e.series}x${e.valuePerSeries}${e.isTimed ? 's' : ""}'),
                 SizedBox(width: 12.w),
                 Icon(Icons.timer, size: 16.sp, color: AppColors.primary),
                 SizedBox(width: 4.w),
