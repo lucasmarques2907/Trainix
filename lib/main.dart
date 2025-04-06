@@ -1,6 +1,8 @@
 import 'package:trainix/config/imports.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+Logger logger = Logger();
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 

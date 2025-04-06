@@ -2,16 +2,20 @@ class ExerciseModel {
   final int? id;
   final String name;
   final int series;
-  final int reps;
+  final bool isTimed;
+  final int valuePerSeries;
   final int rest;
+  final String video;
   final String? observations;
 
   ExerciseModel({
     this.id,
     required this.name,
     required this.series,
-    required this.reps,
+    required this.isTimed,
+    required this.valuePerSeries,
     required this.rest,
+    required this.video,
     this.observations,
   });
 
@@ -20,8 +24,10 @@ class ExerciseModel {
       id: json['id'],
       name: json['name'],
       series: json['series'],
-      reps: json['reps'],
+      isTimed: json['isTimed'],
+      valuePerSeries: json['valuePerSeries'],
       rest: json['rest'],
+      video: json['video'],
       observations: json['observations'] ?? "",
     );
   }
@@ -30,8 +36,10 @@ class ExerciseModel {
     final Map<String, dynamic> data = {
       'name': name,
       'series': series,
-      'reps': reps,
+      'isTimed': isTimed,
+      'valuePerSeries': valuePerSeries,
       'rest': rest,
+      'video': video,
       'observations': observations ?? "",
     };
 

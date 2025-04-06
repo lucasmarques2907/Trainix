@@ -1,5 +1,4 @@
 import 'package:trainix/config/imports.dart';
-import 'package:trainix/features/home/views/home_page.dart';
 
 class TabsController extends ChangeNotifier {
   final TabsRepository tabsRepository;
