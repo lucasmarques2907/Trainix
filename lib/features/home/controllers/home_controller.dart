@@ -7,6 +7,7 @@ class HomeController with ChangeNotifier {
 
   List<TrainingModel> trainings = [];
   List<ExerciseModel> exercises = [];
+  bool teste = false;
 
   void initializeExercises() {
     exercises = [
@@ -17,6 +18,7 @@ class HomeController with ChangeNotifier {
         valuePerSeries: 15,
         rest: 60,
         video: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        isCompleted: false,
       ),
       ExerciseModel(
         name: 'Leg Press 45',
@@ -25,6 +27,7 @@ class HomeController with ChangeNotifier {
         valuePerSeries: 15,
         rest: 60,
         video: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        isCompleted: false,
       ),
       ExerciseModel(
         name: 'Cadeira Flexora',
@@ -33,6 +36,7 @@ class HomeController with ChangeNotifier {
         valuePerSeries: 15,
         rest: 60,
         video: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        isCompleted: false,
       ),
       ExerciseModel(
         name: 'Flexora Vertical Unilateral',
@@ -42,6 +46,7 @@ class HomeController with ChangeNotifier {
         rest: 60,
         video: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
         observations: '12 cada lado',
+        isCompleted: false,
       ),
       ExerciseModel(
         name: 'Cadeira Adutora',
@@ -50,6 +55,7 @@ class HomeController with ChangeNotifier {
         valuePerSeries: 15,
         rest: 60,
         video: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        isCompleted: false,
       ),
       ExerciseModel(
         name: 'Cadeira Abdutora',
@@ -58,6 +64,7 @@ class HomeController with ChangeNotifier {
         valuePerSeries: 15,
         rest: 60,
         video: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        isCompleted: false,
       ),
       ExerciseModel(
         name: 'Panturrilha Máquina Em Pé',
@@ -66,6 +73,7 @@ class HomeController with ChangeNotifier {
         valuePerSeries: 15,
         rest: 60,
         video: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        isCompleted: false,
       ),
       ExerciseModel(
         name: 'Prancha Isométrica',
@@ -74,6 +82,7 @@ class HomeController with ChangeNotifier {
         valuePerSeries: 30,
         rest: 60,
         video: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+        isCompleted: false,
       ),
       ExerciseModel(
         name: 'LISS',
@@ -83,13 +92,20 @@ class HomeController with ChangeNotifier {
         rest: 60,
         video: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
         observations: "Caminhada inclinada, bike leve ou escada",
+        isCompleted: false,
       ),
     ];
     notifyListeners();
   }
 
   void initializeTrainings() {
-    trainings = [TrainingModel(name: 'Treino C', exercises: exercises)];
+    trainings = [TrainingModel(name: 'Treino A', exercises: exercises)];
+    trainings += [TrainingModel(name: 'Treino B', exercises: exercises)];
+    trainings += [TrainingModel(name: 'Treino C', exercises: exercises)];
+    notifyListeners();
+  }
+
+  void update() {
     notifyListeners();
   }
 }

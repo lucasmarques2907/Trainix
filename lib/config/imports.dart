@@ -44,4 +44,4 @@ export 'package:trainix/features/training/views/training_page.dart';
 export 'package:trainix/features/home/views/home_page.dart';
 
 // 🧩 Widgets
-export 'package:trainix/shared/widgets/custom_card.dart';
+export 'package:trainix/features/home/widgets/training_card.dart';

@@ -7,6 +7,7 @@ class ExerciseModel {
   final int rest;
   final String video;
   final String? observations;
+  bool isCompleted;
 
   ExerciseModel({
     this.id,
@@ -16,6 +17,7 @@ class ExerciseModel {
     required this.valuePerSeries,
     required this.rest,
     required this.video,
+    required this.isCompleted,
     this.observations,
   });
 
@@ -29,6 +31,7 @@ class ExerciseModel {
       rest: json['rest'],
       video: json['video'],
       observations: json['observations'] ?? "",
+      isCompleted: json['isCompleted'],
     );
   }
 
@@ -41,6 +44,7 @@ class ExerciseModel {
       'rest': rest,
       'video': video,
       'observations': observations ?? "",
+      'isCompleted': false,
     };
 
     if (includeId && id != null) {
